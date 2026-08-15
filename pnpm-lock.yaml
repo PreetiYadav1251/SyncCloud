@@ -36,7 +36,7 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3
       dotenv:
-        specifier: ^17.2.1
+        specifier: ^17.4.2
         version: 17.4.2
       fastify:
         specifier: ^5.4.0
