@@ -1,0 +1,11 @@
+services:
+  backend:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    container_name: synccloud-backend
+    env_file:
+      - ./Backend/.env
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
