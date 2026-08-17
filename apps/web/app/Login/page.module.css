@@ -1,0 +1,270 @@
+.page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #f8fbff;
+  color: #172033;
+}
+
+/* -------------------------------- */
+/* BRAND SECTION */
+/* -------------------------------- */
+
+.brandSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 45px 8%;
+  background: #1769e0;
+  color: white;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  color: white;
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.logoIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: white;
+  color: #1769e0;
+  font-size: 23px;
+}
+
+.brandContent {
+  max-width: 500px;
+  margin: auto 0;
+  padding-bottom: 80px;
+}
+
+.badge {
+  display: inline-block;
+  margin-bottom: 22px;
+  padding: 8px 15px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.brandContent h1 {
+  margin: 0;
+  font-size: 52px;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+}
+
+.brandContent h1 span {
+  display: block;
+  color: #dcecff;
+}
+
+.brandContent p:last-child {
+  max-width: 450px;
+  margin-top: 25px;
+  color: #dcecff;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* -------------------------------- */
+/* FORM SECTION */
+/* -------------------------------- */
+
+.formSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 7%;
+}
+
+.formCard {
+  width: 100%;
+  max-width: 430px;
+  padding: 42px;
+  background: white;
+  border: 1px solid #e1eaf5;
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(35, 80, 140, 0.1);
+}
+
+.formHeader {
+  margin-bottom: 30px;
+}
+
+.formHeader h2 {
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: -0.5px;
+}
+
+.formHeader p {
+  margin: 9px 0 0;
+  color: #748094;
+  font-size: 14px;
+}
+
+/* -------------------------------- */
+/* INPUTS */
+/* -------------------------------- */
+
+.inputGroup {
+  margin-bottom: 22px;
+}
+
+.inputGroup label {
+  display: block;
+  margin-bottom: 8px;
+  color: #344054;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.inputGroup input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 14px;
+  border: 1px solid #d7e2f0;
+  border-radius: 9px;
+  outline: none;
+  background: white;
+  color: #172033;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.inputGroup input::placeholder {
+  color: #a0aabd;
+}
+
+.inputGroup input:focus {
+  border-color: #1769e0;
+  box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.1);
+}
+
+.passwordLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.passwordLabel label {
+  margin-bottom: 8px;
+}
+
+.passwordLabel a {
+  margin-bottom: 8px;
+  color: #1769e0;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* -------------------------------- */
+/* BUTTON */
+/* -------------------------------- */
+
+.loginButton {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 9px;
+  background: #1769e0;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.loginButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(23, 105, 224, 0.25);
+}
+
+/* -------------------------------- */
+/* DIVIDER */
+/* -------------------------------- */
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0 22px;
+  color: #a0aabd;
+  font-size: 12px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e5ebf3;
+}
+
+/* -------------------------------- */
+/* SIGNUP */
+/* -------------------------------- */
+
+.signupText {
+  margin: 0;
+  text-align: center;
+  color: #748094;
+  font-size: 14px;
+}
+
+.signupText a {
+  color: #1769e0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* -------------------------------- */
+/* RESPONSIVE */
+/* -------------------------------- */
+
+@media (max-width: 850px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .brandSection {
+    min-height: 330px;
+    padding: 30px 8%;
+  }
+
+  .brandContent {
+    margin-top: 60px;
+    padding-bottom: 0;
+  }
+
+  .brandContent h1 {
+    font-size: 40px;
+  }
+
+  .formSection {
+    padding: 45px 7%;
+  }
+}
+
+@media (max-width: 500px) {
+  .formCard {
+    padding: 30px 24px;
+  }
+
+  .brandContent h1 {
+    font-size: 34px;
+  }
+}
