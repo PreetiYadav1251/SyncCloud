@@ -104,32 +104,31 @@ import styles from "./page.module.css";
 export default function Home() {
   const [backendStatus, setBackendStatus] = useState("Checking...");
 
-  useEffect(() => {
-    const checkBackend = async () => {
-      try {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+useEffect(() => {
+  const checkBackend = async () => {
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
-        const response = await fetch(`${apiUrl}/health`);
-
-        if (!response.ok) {
-          throw new Error("Backend request failed");
-        }
-
-        const data = await response.json();
-
-        if (data.status === "healthy") {
-          setBackendStatus("Connected");
-        } else {
-          setBackendStatus("Not Connected");
-        }
-      } catch (error) {
-        console.error("Backend connection error:", error);
-        setBackendStatus("Not Connected");
+      if (!apiUrl) {
+        setBackendStatus("offline");
+        return;
       }
-    };
 
-    checkBackend();
-  }, []);
+      const response = await fetch(`${apiUrl}/health`);
+
+      if (!response.ok) {
+        setBackendStatus("offline");
+        return;
+      }
+
+      setBackendStatus("online");
+    } catch {
+      setBackendStatus("offline");
+    }
+  };
+
+  checkBackend();
+}, []);
 
   return (
     <main className={styles.container}>
