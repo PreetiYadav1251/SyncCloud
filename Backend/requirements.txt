@@ -1,5 +1,12 @@
+# fastapi
+# uvicorn[standard]
+# psycopg[binary]
+# python-dotenv
+# sqlalchemy
+
+
 fastapi
 uvicorn[standard]
-psycopg[binary]
+psycopg2-binary
 python-dotenv
 sqlalchemy

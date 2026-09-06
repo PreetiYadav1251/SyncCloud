@@ -1,17 +1,4 @@
 # services:
-#   backend:
-#     build:
-#       context: ./Backend
-#       dockerfile: Dockerfile
-#     container_name: synccloud-backend
-#     env_file:
-#       - ./Backend/.env
-#     ports:
-#       - "8000:8000"
-#     restart: unless-stopped
-
-
-# services:
 
 #   backend:
 #     build:
@@ -31,33 +18,44 @@
 #     container_name: synccloud-frontend
 #     ports:
 #       - "3000:3000"
+#     environment:
+#       NEXT_PUBLIC_API_URL: http://localhost:8000
 #     depends_on:
 #       - backend
 #     restart: unless-stopped
 
 
-services:
 
+# services:
+
+#   backend:
+#     build:
+#       context: ./apps/Backend
+#       dockerfile: Dockerfile
+
+#     container_name: synccloud-backend
+
+#     ports:
+#       - "8000:8000"
+
+#     env_file:
+#       - ./apps/Backend/.env
+
+#     restart: unless-stopped
+
+
+services:
   backend:
     build:
-      context: ./Backend
+      context: ./backend
       dockerfile: Dockerfile
+
     container_name: synccloud-backend
-    env_file:
-      - ./Backend/.env
+
     ports:
       - "8000:8000"
-    restart: unless-stopped
 
-  frontend:
-    build:
-      context: .
-      dockerfile: ./apps/web/Dockerfile
-    container_name: synccloud-frontend
-    ports:
-      - "3000:3000"
-    environment:
-      NEXT_PUBLIC_API_URL: http://localhost:8000
-    depends_on:
-      - backend
+    env_file:
+      - ./backend/.env
+
     restart: unless-stopped
